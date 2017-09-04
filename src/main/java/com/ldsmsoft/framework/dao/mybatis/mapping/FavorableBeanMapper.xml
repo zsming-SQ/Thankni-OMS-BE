@@ -6,7 +6,6 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="base_line" property="baseLine" jdbcType="DOUBLE" />
     <result column="free_price" property="freePrice" jdbcType="DOUBLE" />
-    <result column="fk_production_id" property="fkProductionId" jdbcType="BIGINT" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="status" property="status" jdbcType="INTEGER" />
@@ -15,7 +14,7 @@
     <result column="remark" property="remark" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, base_line, free_price, fk_production_id, create_time, update_time, status
+    id, name, base_line, free_price, create_time, update_time, status
   </sql>
   <sql id="Blob_Column_List" >
     remark
@@ -34,13 +33,11 @@
   </delete>
   <insert id="insert" parameterType="com.ldsmsoft.framework.dao.mybatis.model.FavorableBean" >
     insert into favorable (id, name, base_line, 
-      free_price, fk_production_id, create_time, 
-      update_time, status, remark
-      )
+      free_price, create_time, update_time, 
+      status, remark)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{baseLine,jdbcType=DOUBLE}, 
-      #{freePrice,jdbcType=DOUBLE}, #{fkProductionId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=LONGVARCHAR}
-      )
+      #{freePrice,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{remark,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ldsmsoft.framework.dao.mybatis.model.FavorableBean" >
     insert into favorable
@@ -56,9 +53,6 @@
       </if>
       <if test="freePrice != null" >
         free_price,
-      </if>
-      <if test="fkProductionId != null" >
-        fk_production_id,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -86,9 +80,6 @@
       <if test="freePrice != null" >
         #{freePrice,jdbcType=DOUBLE},
       </if>
-      <if test="fkProductionId != null" >
-        #{fkProductionId,jdbcType=BIGINT},
-      </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -115,9 +106,6 @@
       <if test="freePrice != null" >
         free_price = #{freePrice,jdbcType=DOUBLE},
       </if>
-      <if test="fkProductionId != null" >
-        fk_production_id = #{fkProductionId,jdbcType=BIGINT},
-      </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -138,7 +126,6 @@
     set name = #{name,jdbcType=VARCHAR},
       base_line = #{baseLine,jdbcType=DOUBLE},
       free_price = #{freePrice,jdbcType=DOUBLE},
-      fk_production_id = #{fkProductionId,jdbcType=BIGINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       status = #{status,jdbcType=INTEGER},
@@ -150,7 +137,6 @@
     set name = #{name,jdbcType=VARCHAR},
       base_line = #{baseLine,jdbcType=DOUBLE},
       free_price = #{freePrice,jdbcType=DOUBLE},
-      fk_production_id = #{fkProductionId,jdbcType=BIGINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       status = #{status,jdbcType=INTEGER}

@@ -2,10 +2,10 @@ package com.ldsmsoft.framework.dao.mybatis.model;
 
 import java.util.Date;
 
-public class ProductionFavorableBean {
+public class UserFavorableBean {
     private Long id;
 
-    private Long fkProductionId;
+    private Long fkUserId;
 
     private Long fkFavorableId;
 
@@ -23,12 +23,12 @@ public class ProductionFavorableBean {
         this.id = id;
     }
 
-    public Long getFkProductionId() {
-        return fkProductionId;
+    public Long getFkUserId() {
+        return fkUserId;
     }
 
-    public void setFkProductionId(Long fkProductionId) {
-        this.fkProductionId = fkProductionId;
+    public void setFkUserId(Long fkUserId) {
+        this.fkUserId = fkUserId;
     }
 
     public Long getFkFavorableId() {

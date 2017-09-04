@@ -51,7 +51,7 @@
 		<!-- 配置表信息 -->
 
 			
-		<table schema="thankni" tableName="user_role" domainObjectName="UserRoleBean"
+		<table schema="thankni" tableName="favorable" domainObjectName="FavorableBean"
 			enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableInsert="true"
 		 	enableCountByExample="false" enableDeleteByExample="false" 
 		 	enableSelectByExample="false" enableUpdateByExample="false">

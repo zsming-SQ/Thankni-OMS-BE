@@ -11,8 +11,6 @@ public class FavorableBean {
 
     private Double freePrice;
 
-    private Long fkProductionId;
-
     private Date createTime;
 
     private Date updateTime;
@@ -51,14 +49,6 @@ public class FavorableBean {
 
     public void setFreePrice(Double freePrice) {
         this.freePrice = freePrice;
-    }
-
-    public Long getFkProductionId() {
-        return fkProductionId;
-    }
-
-    public void setFkProductionId(Long fkProductionId) {
-        this.fkProductionId = fkProductionId;
     }
 
     public Date getCreateTime() {
